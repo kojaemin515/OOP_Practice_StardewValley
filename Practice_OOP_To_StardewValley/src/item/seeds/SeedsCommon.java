@@ -1,18 +1,13 @@
 package item.seeds;
 
 import item.Item;
+import item.groupInterfaces.GroupCode_01;
 
-public abstract class SeedsCommon extends Item {
-	// 아이템그룹 - Seeds 정보
-	public final String groupName = "씨앗";
-	public final int groupCode = 01;
-
-	
+public abstract class SeedsCommon extends Item implements GroupCode_01{
 	// 현재 성장도 저장 변수. 최대값 = daysToGrow 이어야 한다.
 	// 0일땐 씨앗, 1~daysToGrow일땐 줄기, dayToGrow일땐 열매
 	protected int matureDegree = 0;
-	
-	
+
 	// 기본 성장일수
 	protected int basicDaysToGrow;
 	public void setBasicDaysToGrow(int days) {

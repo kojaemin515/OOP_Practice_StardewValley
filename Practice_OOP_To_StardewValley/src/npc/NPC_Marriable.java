@@ -1,6 +1,6 @@
 package npc;
 
-public class NPC_Marriable extends NPC {
+public abstract class NPC_Marriable extends NPC {
 	
 	public boolean isRelationshipOngoing = false;
 	public boolean isMarried = false;
@@ -9,18 +9,12 @@ public class NPC_Marriable extends NPC {
 	private final int MAX_HEART_AFTER_MARRIAGE = 14;
 	
 	@Override
-	public void setHeart(int amount)
-	{
-		if(isMarried)
-		{
+	public void setHeart(int amount) {
+		if (isMarried) {
 			addHeart(amount, MAX_HEART_AFTER_MARRIAGE);
-		}
-		else if(isRelationshipOngoing)
-		{
+		} else if (isRelationshipOngoing) {
 			addHeart(amount, MAX_HEART);
-		}
-		else
-		{
+		} else {
 			addHeart(amount, MAX_HEART_BEFORE_RELATIONSHIP);
 		}
 	}
